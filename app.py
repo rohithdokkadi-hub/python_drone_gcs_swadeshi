@@ -4,7 +4,7 @@ import threading, time, random, math
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'drone-gcs-secret'
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
 
 # ── Drone State ──────────────────────────────────────────────────────────────
 drone_state = {
